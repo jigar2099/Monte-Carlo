@@ -146,7 +146,7 @@ class monte_carlo_simulation:
         
 
 #if __name__ == "__main__":
-#    di_path = '/home/ii_pro/bigdisk/jkb2/Monte_carlo_26oct/merged_slg_creation/merged_LED_naomi_20200224_3-11.txt'
+#    di_path = '/home/ii_pro/bigdisk/jkb2/Monte_carlo_26oct/merged_slg_creation/mLED_3-11.txt'
 #    f1 = monte_carlo_simulation(di_path,1,100,1)
 #    f2,f3,f4 = f1.sep_mat()
     
