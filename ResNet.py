@@ -1,22 +1,14 @@
-from IPython.core.display import display, HTML
-display(HTML("<style>.container { width:100% !important;}</style>"))
-import sys
-import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 from scipy.signal import find_peaks
 from sklearn.utils import shuffle
-#sns.set(style='darkgrid')
-#from talos.utils import lr_normalizer
 import keras
 import tensorflow as tf
-#from keras_self_attention import SeqSelfAttention
 import tensorflow as tf
 from tensorflow import Tensor
 from tensorflow.keras.callbacks import TensorBoard
-from keras.preprocessing.text import one_hot, Tokenizer
 from keras import backend as K
 from keras.models import Sequential, Model
 from keras.layers import Dropout, Dense,GRU, Activation, Flatten, Reshape, BatchNormalization, Input, add, GlobalAveragePooling1D, Bidirectional, LSTM, TimeDistributed, RepeatVector#, Attentionn
@@ -24,19 +16,9 @@ from keras.layers.convolutional import Conv1D, MaxPooling1D, UpSampling1D, ZeroP
 from keras.regularizers import l1, l2
 from keras.utils import np_utils
 from tensorflow.keras.optimizers import Adam, SGD, Adagrad, RMSprop
-RMSE=tf.keras.metrics.RootMeanSquaredError(name='RMse', dtype=None)
 from keras.layers import LeakyReLU, ReLU, Add
-from tensorflow.keras.layers import Attention
-adam=Adam(learning_rate=0.0001)
-sgd=SGD(learning_rate=0.01, momentum=0.5)
-from sklearn import datasets, linear_model
-from sklearn.model_selection import cross_val_score, KFold
-from sklearn.metrics import accuracy_score
-from keras.wrappers.scikit_learn import KerasRegressor
 def rmse(y_true, y_pred):
     return K.sqrt(K.mean(K.square(y_pred - y_true)))
-l = tf.keras.regularizers.l2(1e-10)
-
 train_X = np.load('./1000_sirius/train_X.npy')
 train_y_r = np.load('./1000_sirius/train_y_r.npy')
 
